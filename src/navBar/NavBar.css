@@ -1,0 +1,30 @@
+.n-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.troll-face {
+  height: 26px;
+  width: 31px;
+  margin: auto;
+}
+
+.app-name {
+  font-size: 20.75px;
+  font-weight: bold;
+}
+
+.project-name {
+  font-size: 12px;
+}
+
+.n-left {
+  display: flex;
+  column-gap: 10px;
+  margin-left: 25px;
+}
+
+.n-rigth {
+  margin-right: 25px;
+}
