@@ -13,7 +13,7 @@ function ButtonsGroup(props) {
           placeholder="and take the money"
         />
       </div>
-      <button>Get a new meme image 🖼</button>
+      <button>Get a new meme image</button>
     </div>
   );
 }

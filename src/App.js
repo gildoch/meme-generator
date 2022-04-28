@@ -1,5 +1,7 @@
 import "./App.css";
 import NavBar from "./navBar/NavBar";
+import Pic from "./pic-section/Pic";
+
 import ButtonsGroup from "./input-button-group/ButtonsGroup";
 function App() {
   return (
@@ -10,6 +12,10 @@ function App() {
       <section>
         <ButtonsGroup />
       </section>
+      <section className="me-pic-section">
+        <Pic />
+      </section>
+
     </div>
   );
 }
