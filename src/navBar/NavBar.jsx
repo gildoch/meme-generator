@@ -9,7 +9,7 @@ function NavBar(props) {
         <h1 className="app-name">Meme Generator</h1>
       </div>
       <div className="n-rigth">
-        <h4 className="project-name">React Course - Project 3</h4>
+        <h4 className="project-name">GCH</h4>
       </div>
     </nav>
   );

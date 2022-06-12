@@ -1,6 +1,6 @@
 .buttons-wrapper {
   width: 477px;
-  margin-top: 60px;
+  margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -25,9 +25,26 @@ button {
   margin-top: 25px;
   border-radius: 10px;
   border: 1px solid #711f8d;
+  cursor: pointer;
 }
 
 ::placeholder {
   color: #0d0d0d;
+  padding-left: 40px;
 }
 
+.pic-wrapper {
+  margin-top: 20px;
+  height: 300px;
+}
+
+.meme-pic {
+  width: 477px;
+  height: 300px;
+}
+
+.me-pic-section {
+  width: 477px;
+  margin: auto;
+  margin-top: 30px;
+}
