@@ -9,7 +9,7 @@ function App() {
       <header className="App-header">
         <NavBar />
       </header>
-      <section>
+      <section className="container">
         <ButtonsGroup />
       </section>
       <footer className="App-footer">
