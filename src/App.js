@@ -12,7 +12,7 @@ function App() {
       <section>
         <ButtonsGroup />
       </section>
-      <footer>
+      <footer className="App-footer">
         <Footer />
       </footer>
     </div>

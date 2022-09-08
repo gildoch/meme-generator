@@ -1,12 +1,20 @@
 .App-header {
   background-color: #672280;
-  min-height: 30px;
+  min-height: 5vh;
   color: #ffffff;
 }
 
-footer {
+.App-footer {
   background-color: #672280;
-  min-height: 20px;
+  min-height: 5vh;
   color: #ffffff;
   align-content: center;
+  margin-top: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
 }

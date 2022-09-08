@@ -1,6 +1,5 @@
 import React from "react";
 import "./ButtonsGroup.css";
-import Data from "../Data/memeData";
 
 function ButtonsGroup(props) {
   const [meme, setMeme] = React.useState({
@@ -9,12 +8,17 @@ function ButtonsGroup(props) {
     randomImage: "http://i.imgflip.com/1bij.jpg",
   });
 
-  const [allMemeImages, setAllMemeImages] = React.useState(Data);
+  const [allMemes, setAllMemes] = React.useState([]);
 
+  React.useEffect(() => {
+    fetch("https://api.imgflip.com/get_memes")
+      .then((res) => res.json())
+      .then((data) => setAllMemes(data.data.memes));
+  });
+  
   function getMemeImage() {
-    const memesArray = allMemeImages.data.memes;
-    const randomNumber = Math.floor(Math.random() * memesArray.length);
-    let url = memesArray[randomNumber].url;
+    const randomNumber = Math.floor(Math.random() * allMemes.length);
+    let url = allMemes[randomNumber].url;
     setMeme((prevMeme) => {
       return {
         ...prevMeme,
@@ -23,21 +27,40 @@ function ButtonsGroup(props) {
     });
   }
 
+  function handleChange(event) {
+    const { name, value } = event.target;
+    setMeme((prevMeme) => {
+      return {
+        ...prevMeme,
+        [name]: value,
+      };
+    });
+  }
+
   return (
     <div className="buttons-wrapper">
       <div className="input-text-wrapper">
-        <input type="text" name="up-text" id="up-text" placeholder="Shut Up" />
         <input
           type="text"
-          name="down-text"
-          id="down-text"
+          placeholder="Shut Up"
+          name="topText"
+          value={meme.topText}
+          onChange={handleChange}
+        />
+        <input
+          type="text"
           placeholder="and take the money"
+          name="bottomText"
+          value={meme.bottomText}
+          onChange={handleChange}
         />
       </div>
       <button onClick={getMemeImage}>Get a new meme image</button>
 
       <div className="pic-wrapper">
         <img src={meme.randomImage} alt="" className="meme-pic" />
+        <h2 className="meme--text top">{meme.topText}</h2>
+        <h2 className="meme--text bottom">{meme.bottomText}</h2>
       </div>
     </div>
   );
